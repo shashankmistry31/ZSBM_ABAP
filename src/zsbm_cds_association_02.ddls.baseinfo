@@ -3,6 +3,7 @@
 {
 "FROM":
 [
+"SBOOK",
 "SFLIGHT"
 ],
 "ASSOCIATED":
