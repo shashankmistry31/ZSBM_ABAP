@@ -156,8 +156,6 @@ CLASS gcl_eventreceiver IMPLEMENTATION .
 
     IF e_column-fieldname EQ 'KUNNR'.
 
-      MESSAGE 'Correctly Clicked' TYPE 'I' .
-
       gv_kunnr = VALUE kunnr( gt_kna1[ e_row-index ]-kunnr OPTIONAL  ) .
 
       SELECT * FROM vbak
@@ -171,6 +169,21 @@ CLASS gcl_eventreceiver IMPLEMENTATION .
     ELSE .
       MESSAGE 'Only click on the Customer number column' TYPE 'I'.
     ENDIF .
+
+  ENDMETHOD .
+
+  METHOD handle_button_click.
+
+    CASE es_col_id .
+      WHEN 'VBELN'.
+
+      WHEN OTHERS .
+        MESSAGE 'WRONG button clicked' TYPE  'I' .
+    ENDCASE .
+
+
+
+    MESSAGE 'Button Clicked' TYPE 'I' .
 
   ENDMETHOD .
 
@@ -242,6 +255,7 @@ FORM display_sales_order .
 *     MESSAGE ID SY-MSGID TYPE SY-MSGTY NUMBER SY-MSGNO
 *       WITH SY-MSGV1 SY-MSGV2 SY-MSGV3 SY-MSGV4.
     ENDIF.
+
   ELSE.
     go_alv_9001->refresh_table_display(
     ).
@@ -256,6 +270,7 @@ FORM display_sales_order .
 
   PERFORM display_second_screen .
 
+
 ENDFORM.
 *&---------------------------------------------------------------------*
 *& Form display_second_screen
@@ -268,7 +283,7 @@ ENDFORM.
 FORM display_second_screen .
   PERFORM prepare_vbak_field_catalog .
   PERFORM prepare_vbak_layout .
-*  PERFORM register_kna1_events .
+  PERFORM register_sales_order_events .
 
   go_alv_9001->set_table_for_first_display(
       EXPORTING
@@ -303,6 +318,10 @@ FORM prepare_vbak_field_catalog .
 * Implement suitable error handling here
   ENDIF.
 
+  LOOP AT gt_vbak_fieldcatalog ASSIGNING FIELD-SYMBOL(<fs_fieldcatalog>).
+    <fs_fieldcatalog>-ref_table = '' .
+  ENDLOOP.
+
   DATA : wa_cell_style TYPE lvc_s_styl .
   LOOP AT gt_vbak ASSIGNING FIELD-SYMBOL(<fs_vbak>) .
     IF <fs_vbak>-netwr > 1000.
@@ -325,4 +344,18 @@ ENDFORM.
 FORM prepare_vbak_layout .
 
   gs_layout-stylefname =  'CELL_STYLE' .
+ENDFORM.
+*&---------------------------------------------------------------------*
+*& Form register_sales_order_events
+*&---------------------------------------------------------------------*
+*& text
+*&---------------------------------------------------------------------*
+*& -->  p1        text
+*& <--  p2        text
+*&---------------------------------------------------------------------*
+FORM register_sales_order_events .
+
+  DATA(ob2) = NEW gcl_eventreceiver( ) .
+  SET  HANDLER ob2->handle_button_click FOR go_alv_9001 .
+
 ENDFORM.

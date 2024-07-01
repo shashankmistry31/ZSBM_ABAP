@@ -39,5 +39,8 @@ CLASS gcl_eventreceiver DEFINITION .
     METHODS handle_double_click FOR EVENT  double_click
         OF cl_gui_alv_grid IMPORTING e_row e_column.
 
+    METHODS handle_button_click FOR EVENT button_click
+        OF cl_gui_alv_grid IMPORTING es_col_id es_row_no .
+
 
 ENDCLASS .

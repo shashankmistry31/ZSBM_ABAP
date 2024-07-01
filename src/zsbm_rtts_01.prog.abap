@@ -15,6 +15,7 @@ PARAMETERS : p_tabnam TYPE dd02l-tabname .
 
 START-OF-SELECTION .
 
+
   IF p_tabnam IS NOT INITIAL .
 
     cl_abap_typedescr=>describe_by_name(

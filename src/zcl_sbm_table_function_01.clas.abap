@@ -10,6 +10,9 @@ CLASS zcl_sbm_table_function_01 DEFINITION
     CLASS-METHODS get_data FOR TABLE FUNCTION zsbm_cds_table_function_01 .
 
   PROTECTED SECTION.
+
+
+
   PRIVATE SECTION.
 ENDCLASS.
 
