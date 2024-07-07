@@ -1,0 +1,11 @@
+@EndUserText.label: 'Access Control for Association 01'
+@MappingRole: true
+define role ZSBM_AC_ASSOCIATION_01 {
+    grant
+        select
+            on
+                ZSBM_CDS_ASSOCIATION_01
+                    where
+                        carrid = 'LH' ;
+                        
+}
