@@ -14,9 +14,11 @@ CLASS lc_definition DEFINITION CREATE PRIVATE.
     CLASS-DATA lc_attr1 TYPE int4.
     METHODS m2 .
 
-  PROTECTED SECTION.
 
     CLASS-DATA ob TYPE REF TO lc_definition.
+
+  PROTECTED SECTION.
+
 
 
   PRIVATE SECTION .
@@ -36,7 +38,7 @@ CLASS lc_definition IMPLEMENTATION.
   METHOD object_method.
 
     lo_obj =  ob.
-
+    FREE ob.
   ENDMETHOD.
 
   METHOD m2.
