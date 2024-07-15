@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SUSO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOBJ>
+    <OBJCT>ZSBMCARRID</OBJCT>
+    <FIEL1>CARRID</FIEL1>
+    <FIEL2>ACTVT</FIEL2>
+    <OCLSS>ZSBM</OCLSS>
+   </TOBJ>
+   <TOBJT>
+    <LANGU>E</LANGU>
+    <OBJECT>ZSBMCARRID</OBJECT>
+    <TTEXT>Carrier Id text</TTEXT>
+   </TOBJT>
+   <TOBJVORFLG>
+    <OBJCT>ZSBMCARRID</OBJCT>
+    <FLAG3>N</FLAG3>
+    <FLAG4>A</FLAG4>
+    <FLAG5>A</FLAG5>
+   </TOBJVORFLG>
+   <TACTZ>
+    <TACTZ>
+     <BROBJ>ZSBMCARRID</BROBJ>
+     <ACTVT>03</ACTVT>
+    </TACTZ>
+   </TACTZ>
+  </asx:values>
+ </asx:abap>
+</abapGit>

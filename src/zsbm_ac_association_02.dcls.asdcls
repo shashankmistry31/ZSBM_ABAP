@@ -1,0 +1,14 @@
+@EndUserText.label: 'Access Control for Association 01'
+@MappingRole: true
+define role ZSBM_AC_ASSOCIATION_02 {
+    grant
+        select
+            on
+                ZSBM_CDS_ASSOCIATION_01
+                    redefinition
+                    where
+   ( carrid , connid ) = aspect pfcg_auth( ZSBM_COMBO ,carrid , ZCONNID , ACTVT = '03' )
+//   ( carrid  ) = aspect pfcg_auth( ZSBM_COMBO ,carrid  , ACTVT = '03' )
+                        ;
+                        
+}

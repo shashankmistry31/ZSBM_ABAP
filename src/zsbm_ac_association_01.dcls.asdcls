@@ -6,6 +6,14 @@ define role ZSBM_AC_ASSOCIATION_01 {
             on
                 ZSBM_CDS_ASSOCIATION_01
                     where
-                        carrid = 'LH' ;
-                        
-}
+      ( carrid ) = aspect pfcg_auth( ZSBMCARRID ,carrid , ACTVT = '03' )
+                        ;
+     grant
+        select
+            on
+                ZSBM_CDS_ASSOCIATION_01
+                    combination mode or
+                    where
+                        carrid = 'AA'   
+                        ;             
+}   

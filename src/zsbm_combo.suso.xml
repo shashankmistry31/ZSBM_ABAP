@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SUSO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOBJ>
+    <OBJCT>ZSBM_COMBO</OBJCT>
+    <FIEL1>CARRID</FIEL1>
+    <FIEL2>ZCONNID</FIEL2>
+    <FIEL3>ACTVT</FIEL3>
+    <OCLSS>ZSBM</OCLSS>
+   </TOBJ>
+   <TOBJT>
+    <LANGU>E</LANGU>
+    <OBJECT>ZSBM_COMBO</OBJECT>
+    <TTEXT>Combination of Carr ID + Connection Id</TTEXT>
+   </TOBJT>
+   <TOBJVORFLG>
+    <OBJCT>ZSBM_COMBO</OBJCT>
+    <FLAG3>N</FLAG3>
+    <FLAG4>A</FLAG4>
+    <FLAG5>A</FLAG5>
+   </TOBJVORFLG>
+   <TACTZ>
+    <TACTZ>
+     <BROBJ>ZSBM_COMBO</BROBJ>
+     <ACTVT>03</ACTVT>
+    </TACTZ>
+   </TACTZ>
+  </asx:values>
+ </asx:abap>
+</abapGit>
