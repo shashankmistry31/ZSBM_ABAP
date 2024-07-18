@@ -1,0 +1,14 @@
+@EndUserText.label: 'Consumption View association access control'
+@MappingRole: true
+define role ZSBM_AC_CONSUME_ASSOC_01 {
+    grant
+        select
+            on
+                ZSBM_CDS_CONSUME_ASSOC_01
+                where
+                  inherit ZSBM_AC_ASSOCIATION_02
+                   for grant select on   ZSBM_CDS_ASSOCIATION_01 
+                   or carrid = 'AA'
+                   ;
+                        
+}

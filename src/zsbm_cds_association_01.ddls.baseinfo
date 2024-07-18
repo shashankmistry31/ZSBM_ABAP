@@ -7,7 +7,9 @@
 "SFLIGHT"
 ],
 "ASSOCIATED":
-[],
+[
+"SBOOK"
+],
 "BASE":
 [],
 "ANNO_REF":

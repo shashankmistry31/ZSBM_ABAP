@@ -1,0 +1,11 @@
+@EndUserText.label: 'Association 2 access control'
+@MappingRole: true
+define role ZSBM_AC1_ASSOCIATION_02 {
+    grant
+        select
+            on
+                ZSBM_CDS_ASSOCIATION_02
+                    where 
+                        inheriting conditions from entity ZSBM_CDS_ASSOCIATION_01;
+                        
+}
