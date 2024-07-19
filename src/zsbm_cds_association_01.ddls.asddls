@@ -29,4 +29,4 @@ define view entity ZSBM_CDS_ASSOCIATION_01
        _booking
 
 
-}
+}    

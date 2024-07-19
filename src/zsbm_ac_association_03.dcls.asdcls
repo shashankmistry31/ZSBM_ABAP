@@ -1,0 +1,12 @@
+@EndUserText.label: 'Association 3 access control'
+@MappingRole: true
+define role ZSBM_AC_ASSOCIATION_03 {
+    grant
+        select
+            on
+                ZSBM_CDS_ASSOCIATION_03
+//                    where
+//                        matnr like 'R-41_'
+                        ;
+                        
+}

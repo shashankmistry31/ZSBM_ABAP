@@ -16,6 +16,7 @@ define view entity ZSBM_CDS_ASSOCIATION_03
 
 {
   key _header.vbeln,
+      _header.ernam as createdBy,
       _item.posnr,
       _item.matnr,
       _cust.name1,
