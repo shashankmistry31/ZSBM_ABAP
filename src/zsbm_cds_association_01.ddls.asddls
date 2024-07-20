@@ -7,7 +7,7 @@
     sizeCategory: #S,
     dataClass: #MIXED
 }
-@OData.publish: true
+//@OData.publish: true
 
 define view entity ZSBM_CDS_ASSOCIATION_01
   as select from scarr
