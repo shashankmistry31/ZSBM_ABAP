@@ -55,15 +55,23 @@
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_FIRST_NAME</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
        <TYP>CHAR10</TYP>
       </RSIMP>
       <RSIMP>
        <PARAMETER>IV_LAST_NAME</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
        <TYP>CHAR10</TYP>
       </RSIMP>
       <RSIMP>
        <PARAMETER>IV_MIDDLE_NAME</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
        <TYP>CHAR10</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_COUNTER</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>INT2</TYP>
       </RSIMP>
      </IMPORT>
      <EXPORT>
@@ -87,6 +95,11 @@
        <PARAMETER>IV_MIDDLE_NAME</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Character Field with Length 10</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_COUNTER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>2 Byte Signed Integer</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_OUTPUT</PARAMETER>
