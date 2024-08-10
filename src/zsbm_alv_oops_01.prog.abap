@@ -68,24 +68,34 @@ ENDMODULE.
 *& <--  p2        text
 *&---------------------------------------------------------------------*
 FORM display_alv_9000 .
+  DATA : or_doc TYPE REF TO cl_gui_docking_container.
 
   IF go_alv_9000 IS NOT BOUND .
-    CREATE OBJECT go_cont_9000
-      EXPORTING
-        container_name = 'CC01'.                 " Name of the Screen CustCtrl Name to Link Container To
-    IF sy-subrc <> 0.
+    IF cl_gui_alv_grid=>offline( ) IS INITIAL.
+      CREATE OBJECT go_cont_9000
+        EXPORTING
+          container_name = 'CC01'.                 " Name of the Screen CustCtrl Name to Link Container To
+      IF sy-subrc <> 0.
 *   MESSAGE ID SY-MSGID TYPE SY-MSGTY NUMBER SY-MSGNO
 *     WITH SY-MSGV1 SY-MSGV2 SY-MSGV3 SY-MSGV4.
-    ENDIF.
+      ENDIF.
 
-    CREATE OBJECT go_alv_9000
-      EXPORTING
-        i_parent = go_cont_9000.                " Parent Container
-    IF sy-subrc <> 0.
+      CREATE OBJECT go_alv_9000
+        EXPORTING
+          i_parent = go_cont_9000.                " Parent Container
+      IF sy-subrc <> 0.
 *     MESSAGE ID SY-MSGID TYPE SY-MSGTY NUMBER SY-MSGNO
 *       WITH SY-MSGV1 SY-MSGV2 SY-MSGV3 SY-MSGV4.
+      ENDIF.
+    ELSE.
+      CREATE OBJECT go_alv_9000
+        EXPORTING
+          i_parent = or_doc.                " Parent Container
+      IF sy-subrc <> 0.
+*     MESSAGE ID SY-MSGID TYPE SY-MSGTY NUMBER SY-MSGNO
+*       WITH SY-MSGV1 SY-MSGV2 SY-MSGV3 SY-MSGV4.
+      ENDIF.
     ENDIF.
-
     PERFORM display_first_screen .
 
   ELSE.
